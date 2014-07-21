@@ -1,0 +1,19 @@
+{
+  "name": "twittermood",
+  "version": "0.0.0",
+  "description": "NodeJS and Angular web application that can show how happy or sad your twitter feed is.",
+  "main": "server/src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrislaughlin/twitter-mood.git"
+  },
+  "author": "Chris Laughlin",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/chrislaughlin/twitter-mood/issues"
+  },
+  "homepage": "https://github.com/chrislaughlin/twitter-mood"
+}

@@ -4,7 +4,7 @@
   "description": "NodeJS and Angular web application that can show how happy or sad your twitter feed is.",
   "main": "server/src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node server/test/"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,9 @@
     "method-override": "~2.1.1",
     "errorhandler": "~1.1.1",
     "nconf": "~0.6.9"
+  },
+  "devDependencies": {
+    "gulp-jasmine": "~0.2.0",
+    "jasmine-node": "~1.14.5"
   }
 }

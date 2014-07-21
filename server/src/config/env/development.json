@@ -2,5 +2,11 @@
     "express": {
         "port": 3000
     },
-    "publicPath": "/../../../client/src/"
+    "publicPath": "/../../../client/src/",
+    "twitter" : {
+        "consumer_key": "j7e73ODaTmBLCjTebVuLyQ",
+        "consumer_secret":      "kUHs6yPcG2snHAx70tcJrzqgkU3jDwVzrmQ8AsLfvI",
+        "access_token":         "1952367470-wId4DkQc10jexSuUgg73Xo29Fjo53yCtc3Mzzkf",
+        "access_token_secret":  "vewT5P13RbW3JnLvLdnsgKYKEdWFNpW9xz9Iv85alJcvu"
+    }
 }

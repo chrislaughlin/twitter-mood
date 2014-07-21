@@ -20,5 +20,13 @@ describe("Twitter Status Tests", function() {
             expect(results).toBeUndefined();
             done();
         });
+    });
+
+    it('should return the last 100 tweets from a user', function(done) {
+        twitter.getUserTweets('chrislaughlin', function(results) {
+            expect(results).toBeDefined();
+            expect(results.length).toEqual(100);
+            done();
+        })
     })
 });

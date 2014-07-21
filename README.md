@@ -11,8 +11,22 @@ Install and run
 npm install
 node server/src/server
 ```
-
 Open your browser to http://localhost:3000/
+
+Tests
+------
+
+To run tests you must install jasmine node as a global
+
+``` bash
+npm install jasmine-node -g
+```
+
+Then call the test
+
+``` bash
+jasmine-node server/test/
+```
 
 Technologies Used
 ------------------

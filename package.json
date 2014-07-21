@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/chrislaughlin/twitter-mood/issues"
   },
-  "homepage": "https://github.com/chrislaughlin/twitter-mood"
+  "homepage": "https://github.com/chrislaughlin/twitter-mood",
+  "dependencies": {
+    "gulp": "~3.8.6",
+    "express": "~4.6.1",
+    "twit": "~1.1.18",
+    "sentiment": "~1.0.1",
+    "morgan": "~1.2.0",
+    "body-parser": "~1.5.0",
+    "method-override": "~2.1.1",
+    "errorhandler": "~1.1.1",
+    "nconf": "~0.6.9"
+  }
 }

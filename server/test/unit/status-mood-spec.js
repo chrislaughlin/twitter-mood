@@ -7,13 +7,22 @@ describe('E2E Status and mood testing', function() {
         twitter.getUserTweets('chrislaughlin', function(results) {
             expect(results).toBeDefined();
             var score = 0;
+            var negCount = 0;
+            var posCount = 0;
             for (var i = 0, len = results.length; i < len; i++) {
-                score += moodProcessor.processText(results[i].text);
-                console.log(moodProcessor.processText(results[i].text));
+                var statusScore = moodProcessor.processText(results[i].text);
+                score += statusScore;
+                if (statusScore < 0) {
+                    negCount++;
+                } else {
+                    posCount++
+                }
             }
-            console.log(score);
+            console.log('Total Negative: ' + negCount);
+            console.log('Total Positive : ' + posCount);
+            console.log('Total Score: ' + score);
             expect(score).not.toEqual(0);
             done();
         })
     })
-})
+});

@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "gulp-jasmine": "~0.2.0",
-    "jasmine-node": "~1.14.5"
+    "jasmine-node": "~1.14.5",
+    "request": "~2.37.0"
   }
 }

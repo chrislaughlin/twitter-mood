@@ -9,6 +9,7 @@ Install and run
 
 ``` bash
 npm install
+bower install
 node server/src/server
 ```
 Open your browser to http://localhost:3000/
@@ -22,7 +23,7 @@ To run tests you must install jasmine node as a global
 npm install jasmine-node -g
 ```
 
-Then call the test
+Then run the tests
 
 ``` bash
 jasmine-node server/test/
@@ -35,6 +36,8 @@ Technologies Used
 + [Twit](https://github.com/ttezel/twit)
 + [Sentiment](https://www.npmjs.org/package/sentiment)
 + [AngularJS](https://angularjs.org/)
+
+
 
 
 

@@ -14,7 +14,7 @@ require('./config/express')(app);
 // GET '/hello' - return "Hello World"
 app.get('/hello', routes.hello);
 // GET '/score/username
-app.get('/score/{username}', routes.getScore);
+app.get('/score/:username', routes.getScore);
 
 // Start server
 var port = config.get('express:port');

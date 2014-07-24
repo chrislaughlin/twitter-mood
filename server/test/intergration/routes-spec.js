@@ -9,9 +9,14 @@ describe('Routes Testing', function() {
     });
 
     it('should respond with twitter status score', function(done) {
-        request("http://localhost:3000/score/chrislaughlin", function(error, response, body){
-            expect(body).toBeDefined();
+        request("http://localhost:3000/score/chrislaughlin", function(error, response, data){
+            var twitterScore = JSON.parse(data);
+            expect(twitterScore).toBeDefined();
+            expect(twitterScore.total).toBeDefined();
+            expect(twitterScore.totalNegative).toBeDefined();
+            expect(twitterScore.totalPositive).toBeDefined();
+            expect(twitterScore.totalTweetCount).toEqual(100);
             done();
         });
     })
-})
+});

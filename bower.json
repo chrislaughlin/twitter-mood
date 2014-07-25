@@ -1,19 +1,20 @@
 {
-    "name": "twittermood",
-    "description": "NodeJS and Angular web application that can show how happy or sad your twitter feed is.S",
-    "version": "0.0.0",
-    "homepage": "https://github.com/chrislaughlin/twitter-mood.git",
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-        "angular": "1.2.x",
-        "angular-route": "1.2.x",
-        "angular-loader": "1.2.x",
-        "angular-mocks": "~1.2.x",
-        "html5-boilerplate": "~4.3.0"
-    },
-    "devDependencies": {
-        "jasmine": "~2.0.1"
-    },
-    "directory": "client/src/bower_components"
+  "name": "twittermood",
+  "description": "NodeJS and Angular web application that can show how happy or sad your twitter feed is.S",
+  "version": "0.0.0",
+  "homepage": "https://github.com/chrislaughlin/twitter-mood.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0",
+    "bootstrap": "~3.2.0"
+  },
+  "devDependencies": {
+    "jasmine": "~2.0.1"
+  },
+  "directory": "client/src/bower_components"
 }

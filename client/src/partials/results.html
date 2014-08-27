@@ -1,13 +1,21 @@
 <!-- Results Section -->
-<section id="results" class="content-section text-center">
+<section id="results" class="text-center">
     <div class="results-section">
-        <div class="container">
+        <div class="container" ng-hide="loading">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>your mood!</h2>
-                <p>Based on <a href="#">USERNAME's</a> last <span>200</span> tweets you are......</p>
-                <h3><span class="happy"><i class="fa fa-smile-o"></i>HAPPY<i class="fa fa-smile-o"></i></span></h3>
-                <p>In your last 200 tweets you posted <span class="happy">85 happy</span> tweets and <span class="sad">15 sad</span> tweets.</p>
+                <p>Based on <a href="#">{{results.username}}'s</a> last <span>{{results.tweetCount}}</span> tweets you are......</p>
+                <h3><span class="happy">
+                    <i ng-class="results.mood == 'happy' ? 'fa fa-smile-o' : 'fa fa-frown-o'"></i>
+                    {{results.mood}}
+                    <i ng-class="results.mood == 'happy' ? 'fa fa-smile-o' : 'fa fa-frown-o'"></i>
+                </span></h3>
+                <p>In your last {{results.tweetCount}} tweets you posted <span class="happy">{{results.happyCount}} happy</span>
+                    tweets and <span class="sad">{{results.sadCount}} sad</span> tweets.</p>
             </div>
+            <p>
+                <h3 class="text-left"><a href="#/main">BACK</a></h3>
+            </p>
         </div>
     </div>
 </section>

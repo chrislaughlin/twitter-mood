@@ -249,11 +249,21 @@ a:focus {
 }
 
 .content-section {
-    padding-top: 100px;
+    padding-top: 50px;
+}
+
+.app {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    padding-bottom: 200px;
 }
 
 .results-section {
     width: 100%;
+    min-width: 470px;
     padding: 50px 0;
     color: #000;
     background: url(../img/city.jpg) no-repeat center center scroll;

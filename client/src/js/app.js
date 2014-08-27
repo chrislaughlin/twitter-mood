@@ -10,7 +10,7 @@ angular.module('twitterMood', [
   'twitterMood.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/score', {templateUrl: 'partials/score.html', controller: 'ScoreCtrl'});
-  $routeProvider.when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'});
-  $routeProvider.otherwise({redirectTo: '/score'});
+  $routeProvider.when('/main', {templateUrl: 'partials/main.html', controller: 'MoodCtrl'});
+  $routeProvider.when('/results/:username', {templateUrl: 'partials/results.html', controller: 'ResultsCtrl'});
+  $routeProvider.otherwise({redirectTo: '/main'});
 }]);

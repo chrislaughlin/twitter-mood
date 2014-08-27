@@ -3,17 +3,31 @@
 /* Controllers */
 
 angular.module('twitterMood.controllers', [])
-  .controller('ScoreCtrl', ['$scope', '$http', function($scope, $http) {
+  .controller('MoodCtrl', ['$scope', '$location', function($scope, $location) {
 
-        $scope.username = '';
+        $scope.name = '';
 
-        $scope.getScore = function() {
-            $http.get('/score/'+$scope.username).success(function(data) {
-                alert(angular.fromJson(data));
-            });
+        $scope.submit = function(name) {
+            if ($scope.name == '') {
+                alert('You must provide a username.');
+                return;
+            }
+            $location.path('results/'+$scope.name);
         }
 
   }])
-  .controller('AboutCtrl', ['$scope', function($scope) {
+  .controller('ResultsCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
 
+        $scope.results = {};
+        $scope.loading = true;
+        $http.get('/score/'+$routeParams.username).success(function(data) {
+            $scope.results = {
+                username: $routeParams.username,
+                mood: data.totalPositive > data.totalNegative ? 'happy' : 'sad',
+                tweetCount: data.totalTweetCount,
+                happyCount: data.totalPositive,
+                sadCount: data.totalNegative
+            };
+            $scope.loading = false;
+        });
   }]);

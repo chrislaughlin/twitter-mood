@@ -4,11 +4,7 @@
   "description": "NodeJS and Angular web application that can show how happy or sad your twitter feed is.",
   "main": "server/src/server.js",
   "scripts": {
-    "postinstall": "bower install",
-    "prestart": "npm install",
-    "start": "server/src/server.js",
-    "pretest": "npm install",
-    "test": "jasmine-node server/test/"
+    "start": "server/src/server.js"
   },
   "repository": {
     "type": "git",

@@ -37,6 +37,13 @@ Technologies Used
 + [Sentiment](https://www.npmjs.org/package/sentiment)
 + [AngularJS](https://angularjs.org/)
 
+Screen shots
+---------------
+# Main Screen
+![alt text](assets/screen_1.png)
+# Mood Screen
+![alt text](assets/screen_2.png)
+
 
 
 

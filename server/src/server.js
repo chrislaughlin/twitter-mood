@@ -15,7 +15,7 @@ app.get('/hello', routes.hello);
 app.get('/score/:username', routes.getScore);
 
 // Start server
-var port = config.get('express:port');
+var port = Number(process.env.PORT || config.get('express:port'));
 app.listen(port, function () {
     console.log('Twitter Mood server listening on port %d in %s mode', port, app.get('env'));
 });

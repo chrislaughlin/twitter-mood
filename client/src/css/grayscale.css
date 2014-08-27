@@ -252,11 +252,11 @@ a:focus {
     padding-top: 100px;
 }
 
-.download-section {
+.results-section {
     width: 100%;
     padding: 50px 0;
-    color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    color: #000;
+    background: url(../img/city.jpg) no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -275,7 +275,7 @@ a:focus {
         padding-top: 250px;
     }
 
-    .download-section {
+    .results-section {
         padding: 100px 0;
     }
 
@@ -364,4 +364,12 @@ body {
 
 .username {
     padding-left: 30%;
+}
+
+.happy {
+    color: #79BD9A;
+}
+
+.sad {
+    color: #C02942;
 }

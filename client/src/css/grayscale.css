@@ -338,6 +338,7 @@ ul.banner-social-buttons {
     ul.banner-social-buttons li:last-child {
         margin-bottom: 0;
     }
+
 }
 
 footer {
@@ -382,4 +383,15 @@ body {
 
 .sad {
     color: #C02942;
+}
+
+ul.input-list li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+input {
+    color: #000000;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }

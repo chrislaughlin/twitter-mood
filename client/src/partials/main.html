@@ -6,11 +6,14 @@
             <p>Enter you twitter username below and find out what mood your twitter is</p>
             <div class="form-group col-lg-8 username">
                 <form ng-submit="submit()">
-                    <div class="input-group">
-                        <div class="input-group-addon">@</div>
-                        <input class="form-control" placeholder="username" ng-model="name">
-                        <span class="input-group-addon"><input type="submit" id="submit" value="GO!" /></span>
-                    </div>
+                    <ul class="list-inline input-list">
+                        <li>
+                            <input class="input-lg" placeholder="username" ng-model="name">
+                        </li>
+                        <li>
+                            <input type="submit" id="submit" value="GO!" class="btn btn-default btn-lg" />
+                        </li>
+                    </ul>
                 </form>
             </div>
         </div>

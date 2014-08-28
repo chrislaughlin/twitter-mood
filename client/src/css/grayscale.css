@@ -266,13 +266,8 @@ a:focus {
     min-width: 470px;
     min-height: 500px;
     padding: 50px 0;
-    color: #000;
-    background: url(../img/city.jpg) no-repeat center center scroll;
+    color: inherit;
     background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
 #map {
@@ -396,3 +391,7 @@ input {
     color: #000000;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+
+/*797a7c*/
+/*141517*/

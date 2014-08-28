@@ -1,6 +1,13 @@
 <!-- Results Section -->
 <section id="results" class="text-center">
     <div class="results-section">
+        <!-- Spinner -->
+        <div ng-show="loading">
+            <h2>Loading Tweets...</h2>
+            <img src="img/spinner.gif">
+        </div>
+
+        <!-- Results -->
         <div class="container" ng-hide="loading">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>your mood!</h2>

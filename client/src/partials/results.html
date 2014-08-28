@@ -12,7 +12,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>your mood!</h2>
                 <p>Based on <a href="#">{{results.username}}'s</a> last <span>{{results.tweetCount}}</span> tweets you are......</p>
-                <h3><span class="happy">
+                <h3><span ng-class="results.mood">
                     <i ng-class="results.mood == 'happy' ? 'fa fa-smile-o' : 'fa fa-frown-o'"></i>
                     {{results.mood}}
                     <i ng-class="results.mood == 'happy' ? 'fa fa-smile-o' : 'fa fa-frown-o'"></i>
@@ -20,8 +20,8 @@
                 <p>In your last {{results.tweetCount}} tweets you posted <span class="happy">{{results.happyCount}} happy</span>
                     tweets and <span class="sad">{{results.sadCount}} sad</span> tweets.</p>
             </div>
-            <p>
-                <h3 class="text-left"><a href="#/main">BACK</a></h3>
+            <p class="col-lg-8 col-lg-offset-2">
+                <h3 class="text-left"><a class="btn btn-default btn-lg" href="#/main">BACK</a></h3>
             </p>
         </div>
     </div>

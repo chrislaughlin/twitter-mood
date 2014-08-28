@@ -3,9 +3,11 @@
 /* Directives */
 
 
-angular.module('twitterMood.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
+angular.module('twitterMood.directives', []).directive('accessible', function () {
+    return {
+        retrict: 'E',
+        link: function (scope, elem) {
+
+        }
     };
-  }]);
+});

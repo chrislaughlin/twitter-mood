@@ -1,6 +1,9 @@
+'use strict';
+
 describe("Twitter Status Tests", function() {
 
     var twitter = require('../../src/twitter');
+    var commonData = require('./common-data');
 
     it("should return hello world", function() {
         expect(twitter.hello()).toBe('Hello World');
@@ -22,10 +25,22 @@ describe("Twitter Status Tests", function() {
         });
     });
 
-    it('should return the last 100 tweets from a user', function(done) {
+    it('should return the tweets from a user', function(done) {
         twitter.getUserTweets('chrislaughlin', function(results) {
             expect(results).toBeDefined();
-            expect(results.length).toEqual(100);
+            expect(results.length).toEqual(200);
+            done();
+        })
+    });
+
+    it('should process the returned tweets', function(done) {
+        twitter.processTweets(commonData.sampleTweets(), function(results) {
+            expect(results.total).toEqual(3);
+            expect(results.totalHappy).toEqual(2);
+            expect(results.totalSad).toEqual(1);
+            expect(results.totalSad).toEqual(1);
+            expect(results.happyTweet).toEqual('Cats are totally amazing!');
+            expect(results.sadTweet).toEqual('Cats are stupid');
             done();
         })
     })

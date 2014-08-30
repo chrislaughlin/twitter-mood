@@ -18,9 +18,6 @@ describe('E2E Status and mood testing', function() {
                     posCount++
                 }
             }
-            console.log('Total Negative: ' + negCount);
-            console.log('Total Positive : ' + posCount);
-            console.log('Total Score: ' + score);
             expect(score).not.toEqual(0);
             done();
         })

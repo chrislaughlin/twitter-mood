@@ -15,7 +15,7 @@ describe('Routes Testing', function() {
             expect(twitterScore.total).toBeDefined();
             expect(twitterScore.totalNegative).toBeDefined();
             expect(twitterScore.totalPositive).toBeDefined();
-            expect(twitterScore.totalTweetCount).toEqual(100);
+            expect(twitterScore.totalTweetCount).toEqual(200);
             done();
         });
     })

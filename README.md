@@ -41,8 +41,10 @@ Screen shots
 ---------------
 # Main Screen
 ![alt text](assets/screen_1.png)
-# Mood Screen
+# Mood Input Screen
 ![alt text](assets/screen_2.png)
+# Mood Results
+![alt text](assets/screen_3.png)
 
 
 

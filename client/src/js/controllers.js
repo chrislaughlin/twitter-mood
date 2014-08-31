@@ -24,7 +24,7 @@ angular.module('twitterMood.controllers', [])
             $http.get('/score/' + $routeParams.username).success(function (data) {
                 $scope.results = {
                     username: $routeParams.username,
-                    mood: data.totalPositive > data.totalNegative ? 'happy' : 'sad',
+                    mood: data.totalHappy > data.totalSad ? 'happy' : 'sad',
                     tweetCount: data.total,
                     happyCount: data.totalHappy,
                     sadCount: data.totalSad,

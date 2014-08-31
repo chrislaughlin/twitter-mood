@@ -10,12 +10,15 @@ describe('Routes Testing', function() {
 
     it('should respond with twitter status score', function(done) {
         request("http://localhost:3000/score/chrislaughlin", function(error, response, data){
+
             var twitterScore = JSON.parse(data);
             expect(twitterScore).toBeDefined();
             expect(twitterScore.total).toBeDefined();
-            expect(twitterScore.totalNegative).toBeDefined();
-            expect(twitterScore.totalPositive).toBeDefined();
-            expect(twitterScore.totalTweetCount).toEqual(200);
+            expect(twitterScore.totalSad).toBeDefined();
+            expect(twitterScore.totalHappy).toBeDefined();
+            expect(twitterScore.total).toEqual(100);
+            expect(twitterScore.happyTweet).not.toEqual('');
+            expect(twitterScore.sadTweet).not.toEqual('');
             done();
         });
     })

@@ -28,7 +28,7 @@ describe("Twitter Status Tests", function() {
     it('should return the tweets from a user', function(done) {
         twitter.getUserTweets('chrislaughlin', function(results) {
             expect(results).toBeDefined();
-            expect(results.length).toEqual(200);
+            expect(results.length).toEqual(100);
             done();
         })
     });

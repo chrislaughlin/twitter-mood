@@ -38,7 +38,7 @@ exports.search = function(searchTerm, callBack) {
 Return the last 100 tweets from a user
  */
 exports.getUserTweets = function(username, callBack) {
-    T.get('statuses/user_timeline', {screen_name: username, count: 200}, function(err, reply) {
+    T.get('statuses/user_timeline', {screen_name: username, count: 100}, function(err, reply) {
         if (err) {
             console.dir(err);
             callBack(err);

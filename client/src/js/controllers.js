@@ -25,9 +25,11 @@ angular.module('twitterMood.controllers', [])
                 $scope.results = {
                     username: $routeParams.username,
                     mood: data.totalPositive > data.totalNegative ? 'happy' : 'sad',
-                    tweetCount: data.totalTweetCount,
-                    happyCount: data.totalPositive,
-                    sadCount: data.totalNegative
+                    tweetCount: data.total,
+                    happyCount: data.totalHappy,
+                    sadCount: data.totalSad,
+                    happyTweet: data.happyTweet,
+                    sadTweet: data.sadTweet
                 };
                 $scope.loading = false;
             });

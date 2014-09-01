@@ -3,9 +3,10 @@
 /* Controllers */
 
 angular.module('twitterMood.controllers', [])
-    .controller('MoodCtrl', ['$scope', '$location', function ($scope, $location) {
+    .controller('MoodCtrl', ['$scope', '$location', 'GoogleMaps', function ($scope, $location, GoogleMaps) {
 
         $scope.name = '';
+        $scope.location = '';
 
         $scope.submit = function (name) {
             if ($scope.name == '') {
@@ -13,6 +14,14 @@ angular.module('twitterMood.controllers', [])
                 return;
             }
             $location.path('results/' + $scope.name);
+        };
+
+        $scope.submitLocation = function(location) {
+            GoogleMaps.getLatLong($scope.location).then(function(data) {
+                console.dir(data);
+            }, function(err) {
+                console.dir(err);
+            })
         }
 
     }])

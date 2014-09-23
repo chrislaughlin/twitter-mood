@@ -26,9 +26,15 @@
                         class="happy">{{results.happyCount}} happy</span>
                     tweets and <span class="sad">{{results.sadCount}} sad</span> tweets.</p>
 
-                <p>Happiest tweet: <span class="happy">{{results.happyTweet}}</span></p>
+                <p class="happy">
+                    <i class="wi wi-day-sunny"/>
+                    <span>{{results.happyTweet}}</span>
+                </p>
 
-                <p>Saddest tweet: <span class="sad">{{results.sadTweet}}</span></p>
+                <p class="sad">
+                    <i class="wi wi-rain-wind"/>
+                    <span >{{results.sadTweet}}</span>
+                </p>
             </div>
         </div>
         <div class="row">

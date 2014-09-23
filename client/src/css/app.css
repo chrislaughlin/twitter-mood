@@ -354,6 +354,10 @@ body {
     color: #C02942;
 }
 
+.sad img {
+    fill: #C02942;
+}
+
 ul.input-list li {
     display: block;
     margin-bottom: 20px;

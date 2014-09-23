@@ -81,9 +81,9 @@
                         <h1 class="brand-heading">Twitter Mood</h1>
                         <p class="intro-text">Test the happiness of your twitter account<br>Created by
                             <a href="http://christopherlaughlin.co.uk" target="_blank">Chris Laughlin</a>.</p>
-                        <a href="#app" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
+                        <!--<a href="#app" class="btn btn-circle page-scroll">-->
+                            <!--<i class="fa fa-angle-double-down animated"></i>-->
+                        <!--</a>-->
                     </div>
                 </div>
             </div>
@@ -91,9 +91,13 @@
     </header>
 
     <!-- angular container -->
-    <div id="app" class="app" ng-view>
-
-    </div>
+    <section id="app_container" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div id="app" class="app" ng-view></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">

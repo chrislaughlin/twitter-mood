@@ -22,7 +22,8 @@
     "body-parser": "~1.5.0",
     "method-override": "~2.1.1",
     "errorhandler": "~1.1.1",
-    "nconf": "~0.6.9"
+    "nconf": "~0.6.9",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "gulp-jasmine": "~0.2.0",

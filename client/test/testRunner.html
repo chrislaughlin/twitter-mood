@@ -3,17 +3,42 @@
 <html>
 <head>
     <title>Jasmine Test Runner</title>
-    <link rel="stylesheet" type="text/css" href="../vendor/jasmine-1.2.0/jasmine.css">
-    <script type="text/javascript" src="../vendor/jasmine-1.2.0/jasmine.js"></script>
-    <script type="text/javascript" src="../vendor/jasmine-1.2.0/jasmine-html.js"></script>
+    <link rel="shortcut icon" type="image/png" href="jasmine-2.0.3/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine-2.0.3/jasmine.css">
 
-    <script type="text/javascript" src="../lib/console-runner.js"></script>
+    <script type="text/javascript" src="jasmine-2.0.3/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine-2.0.3/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine-2.0.3/boot.js"></script>
 
     <!-- SOURCE FILES -->
-    <script type="text/javascript" src="js/example.js"></script>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="../src/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../src/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../src/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Angular JS -->
+    <script src="../src/bower_components/angular/angular.js"></script>
+    <script src="../src/bower_components/angular-route/angular-route.js"></script>
+
+    <!-- Angular Application -->
+    <script src="../src/js/app.js"></script>
+    <script src="../src/js/services.js"></script>
+    <script src="../src/js/controllers.js"></script>
+    <script src="../src/js/filters.js"></script>
+    <script src="../src/js/directives.js"></script>
 
     <!-- TEST FILES -->
-    <script type="text/javascript" src="js/example_spec.js"></script>
+    <script type="text/javascript" src="unit/controllersSpec.js"></script>
+    <script type="text/javascript" src="unit/servicesSpec.js"></script>
+    <script type="text/javascript" src="unit/filtersSpec.js"></script>
+    <script type="text/javascript" src="unit/directivesSpec.js"></script>
 </head>
 <body>
 

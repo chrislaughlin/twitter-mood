@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chrislaughlin/twitter-mood.svg?branch=master)](https://travis-ci.org/chrislaughlin/twitter-mood)
+
 Titter Mood
 ============
 

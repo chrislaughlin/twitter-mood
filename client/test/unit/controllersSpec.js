@@ -2,19 +2,47 @@
 
 /* jasmine specs for controllers go here */
 
-describe('controllers', function(){
-  beforeEach(module('twitterMood.controllers'));
+describe('controllers', function () {
+
+    var scope,
+        controller,
+        location;
+    beforeEach(function () {
+        module('twitterMood');
+    });
+
+    beforeEach(inject(function ($rootScope, $controller, $location) {
+        scope = $rootScope.$new();
+        controller = $controller('MoodCtrl', {
+            '$scope': scope
+        });
+        location = $location;
+    }));
 
 
-  it('should ....', inject(function($controller) {
-    //spec body
-    var myCtrl1 = $controller('MyCtrl1', { $scope: {} });
-    expect(myCtrl1).toBeDefined();
-  }));
+    it('should have Mood Controller', inject(function() {
+        //spec body
+        expect(controller).toBeDefined();
+    }));
 
-  it('should ....', inject(function($controller) {
-    //spec body
-    var myCtrl2 = $controller('MyCtrl2', { $scope: {} });
-    expect(myCtrl2).toBeDefined();
-  }));
+    it('should default name and location to blank strings', function() {
+        expect(scope.name).toEqual('');
+        expect(scope.location).toEqual('');
+    });
+
+    it('should not change the location if the name is blank', function() {
+        spyOn(location, 'path');
+        scope.submit();
+        expect(location.path).not.toHaveBeenCalled();
+    });
+
+    it('should change the location path when submitting', function() {
+        spyOn(location, 'path');
+        scope.name = 'test';
+        scope.submit();
+        expect(location.path).toHaveBeenCalledWith('results/test');
+    });
+
+
+
 });

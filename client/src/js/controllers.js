@@ -8,7 +8,7 @@ angular.module('twitterMood.controllers', [])
         $scope.name = '';
         $scope.location = '';
 
-        $scope.submit = function (name) {
+        $scope.submit = function () {
             if ($scope.name == '') {
                 alert('You must provide a username.');
                 return;

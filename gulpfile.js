@@ -4,7 +4,12 @@ var nodemon     = require('gulp-nodemon');
 var jshint      = require('gulp-jshint');
 
 gulp.task('default', function() {
-
+    nodemon({ script: 'server/src/server.js',
+        ext: 'html js css',
+        ignore: ['server/test/**/*.js', 'client/test/**/*.js'] })
+        .on('restart', function() {
+            console.log('Application restarted!');
+        })
 });
 
 gulp.task('test:unit', function () {

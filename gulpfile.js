@@ -1,9 +1,4 @@
-/**
- * NOT IN USE!
- */
-
-
-var gulp = require('gulp');
+var gulp    = require('gulp');
 var jasmine = require('gulp-jasmine');
 
 gulp.task('default', function() {

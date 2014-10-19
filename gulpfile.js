@@ -28,7 +28,7 @@ gulp.task('develop', function () {
         .on('change', ['lint'])
         .on('restart', function () {
             console.log('restarted!')
-        })
+        });
 });
 
 gulp.task('test', function() {

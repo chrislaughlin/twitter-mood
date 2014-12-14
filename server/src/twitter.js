@@ -7,6 +7,7 @@ var T = new Twit({
     , access_token:         '1952367470-wId4DkQc10jexSuUgg73Xo29Fjo53yCtc3Mzzkf'
     , access_token_secret:  'vewT5P13RbW3JnLvLdnsgKYKEdWFNpW9xz9Iv85alJcvu'
 });
+var moment = require('moment');
 
 /*
  Returns the simple string 'Hello'
@@ -62,6 +63,7 @@ exports.processTweets = function(tweets, callback) {
         score: 0,
         text: ''
     };
+    var returnTweets = [];
     for (var i = 0, len = tweets.length; i < len; i++) {
         var statusScore = moodProcessor.processText(tweets[i].text);
         if (statusScore < 0) {
@@ -81,12 +83,14 @@ exports.processTweets = function(tweets, callback) {
                 }
             }
         }
+        returnTweets.push({day: moment(tweets[i].created_at).format('dddd')});
     }
     callback({
         total: tweets.length,
         totalHappy: posCount,
         totalSad: negCount,
         happyTweet: happyTweet.text,
-        sadTweet: sadTweet.text
+        sadTweet: sadTweet.text,
+        tweets: returnTweets
     });
 };

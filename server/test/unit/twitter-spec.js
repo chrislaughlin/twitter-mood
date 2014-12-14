@@ -4,6 +4,7 @@ describe("Twitter Status Tests", function() {
 
     var twitter = require('../../src/twitter');
     var commonData = require('./common-data');
+    var moment = require('moment');
 
     it("should return hello world", function() {
         expect(twitter.hello()).toBe('Hello World');
@@ -43,5 +44,19 @@ describe("Twitter Status Tests", function() {
             expect(results.sadTweet).toEqual('Cats are stupid');
             done();
         })
-    })
+    });
+
+    it('should return the day of the week', function() {
+        var dateStr = 'Sat Aug 30 14:40:02 +0000 2014';
+        expect(moment(dateStr).format('dddd')).toEqual('Saturday');
+    });
+
+    it('should return the day of the week on each tweet', function(done) {
+        twitter.processTweets(commonData.sampleTweets(), function(results) {
+            expect(results.tweets.length).toEqual(3);
+            expect(results.tweets[0].day).toEqual('Saturday');
+            done();
+        });
+    });
+
 });

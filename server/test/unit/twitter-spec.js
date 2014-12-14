@@ -55,6 +55,7 @@ describe("Twitter Status Tests", function() {
         twitter.processTweets(commonData.sampleTweets(), function(results) {
             expect(results.tweets.length).toEqual(3);
             expect(results.tweets[0].day).toEqual('Saturday');
+            expect(results.tweets[0].text).toEqual('TSM calculator - Imgur http://t.co/CNXjJ6L4Fd');
             done();
         });
     });

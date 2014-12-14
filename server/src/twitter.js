@@ -83,7 +83,10 @@ exports.processTweets = function(tweets, callback) {
                 }
             }
         }
-        returnTweets.push({day: moment(tweets[i].created_at).format('dddd')});
+        returnTweets.push({
+            day: moment(tweets[i].created_at).format('dddd'),
+            text: tweets[i].text
+        });
     }
     callback({
         total: tweets.length,

@@ -3,6 +3,7 @@ var jasmine     = require('gulp-jasmine');
 var nodemon     = require('gulp-nodemon');
 var jshint      = require('gulp-jshint');
 var karma       = require('gulp-karma');
+var jasmine     = require('gulp-jasmine');
 
 gulp.task('default', function() {
     nodemon({ script: 'server/src/server.js',
@@ -51,3 +52,14 @@ gulp.task('test', function() {
 gulp.task('autotest', function() {
     return gulp.watch(['www/js/**/*.js', 'test/spec/*.js'], ['test']);
 });
+
+gulp.task('serverTest:unit', function() {
+    return gulp.src('server/test/unit/**/*.js')
+        .pipe(jasmine({verbose: true}));
+});
+
+gulp.task('serverTest:e2e', function() {
+    return gulp.src('server/test/integration/**/*.js')
+        .pipe(jasmine({verbose: true}));
+});
+

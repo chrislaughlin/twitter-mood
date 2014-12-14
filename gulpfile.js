@@ -49,8 +49,8 @@ gulp.task('test', function() {
         });
 });
 
-gulp.task('autotest', function() {
-    return gulp.watch(['www/js/**/*.js', 'test/spec/*.js'], ['test']);
+gulp.task('autoUnitTest:server', function() {
+    return gulp.watch(['server/src/**/*.js', 'server/test/unit/**/*.js'], ['serverTest:unit']);
 });
 
 gulp.task('serverTest:unit', function() {

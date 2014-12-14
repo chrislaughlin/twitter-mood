@@ -63,7 +63,8 @@ exports.processTweets = function(tweets, callback) {
         score: 0,
         text: ''
     };
-    var returnTweets = [];
+    var posTweets = [];
+    var negTweets = [];
     for (var i = 0, len = tweets.length; i < len; i++) {
         var statusScore = moodProcessor.processText(tweets[i].text);
         if (statusScore < 0) {
@@ -74,6 +75,10 @@ exports.processTweets = function(tweets, callback) {
                     text: tweets[i].text
                 }
             }
+            negTweets.push({
+                day: moment(tweets[i].created_at).format('dddd'),
+                text: tweets[i].text
+            });
         } else {
             posCount++;
             if (i == 0 || statusScore >= happyTweet.score) {
@@ -82,11 +87,11 @@ exports.processTweets = function(tweets, callback) {
                     text: tweets[i].text
                 }
             }
+            posTweets.push({
+                day: moment(tweets[i].created_at).format('dddd'),
+                text: tweets[i].text
+            });
         }
-        returnTweets.push({
-            day: moment(tweets[i].created_at).format('dddd'),
-            text: tweets[i].text
-        });
     }
     callback({
         total: tweets.length,
@@ -94,6 +99,7 @@ exports.processTweets = function(tweets, callback) {
         totalSad: negCount,
         happyTweet: happyTweet.text,
         sadTweet: sadTweet.text,
-        tweets: returnTweets
+        posTweets: posTweets,
+        negTweets: negTweets
     });
 };

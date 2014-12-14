@@ -39,7 +39,6 @@ describe("Twitter Status Tests", function() {
             expect(results.total).toEqual(3);
             expect(results.totalHappy).toEqual(2);
             expect(results.totalSad).toEqual(1);
-            expect(results.totalSad).toEqual(1);
             expect(results.happyTweet).toEqual('Cats are totally amazing!');
             expect(results.sadTweet).toEqual('Cats are stupid');
             done();
@@ -53,9 +52,10 @@ describe("Twitter Status Tests", function() {
 
     it('should return the day of the week on each tweet', function(done) {
         twitter.processTweets(commonData.sampleTweets(), function(results) {
-            expect(results.tweets.length).toEqual(3);
-            expect(results.tweets[0].day).toEqual('Saturday');
-            expect(results.tweets[0].text).toEqual('TSM calculator - Imgur http://t.co/CNXjJ6L4Fd');
+            expect(results.posTweets.length).toEqual(2);
+            expect(results.negTweets.length).toEqual(1);
+            expect(results.posTweets[0].day).toEqual('Saturday');
+            expect(results.posTweets[0].text).toEqual('TSM calculator - Imgur http://t.co/CNXjJ6L4Fd');
             done();
         });
     });

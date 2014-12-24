@@ -25,14 +25,9 @@ describe('Controllers: ', function () {
         location = $location;
     }));
 
-
+    // Mood Controller
     it('should have Mood Controller', inject(function() {
-        //spec body
         expect(moodController).toBeDefined();
-    }));
-
-    it('should have a Results Controller', inject(function() {
-        expect(resultsController).toBeDefined();
     }));
 
     it('should default name and location to blank strings', function() {
@@ -52,6 +47,12 @@ describe('Controllers: ', function () {
         moodScope.submit();
         expect(location.path).toHaveBeenCalledWith('results/test');
     });
+
+    //Results Controller
+
+    it('should have a Results Controller', inject(function() {
+        expect(resultsController).toBeDefined();
+    }));
 
 
 

@@ -1,14 +1,19 @@
 'use strict';
 
-/* jasmine specs for services go here */
+describe('Services', function () {
 
-describe('service', function() {
-  beforeEach(module('twitterMood.services'));
+    beforeEach(module('twitterMood.services'));
+    beforeEach(module('twitterMood.factories'));
 
+    describe('Graph Data Service: ', function () {
 
-  describe('version', function() {
-    it('should return current version', inject(function(version) {
-      expect(version).toEqual('0.1');
-    }));
-  });
+        it('Set User results data', inject(function (GraphData) {
+            var data = example;
+            GraphData.storeUserData('username', data);
+            var userData = GraphData.getUserData('username');
+            expect(userData.getHappyTweets()).toEqual(data.posTweets);
+            expect(userData.getSadTweets()).toEqual(data.negTweets);
+        }));
+
+    });
 });

@@ -48,12 +48,16 @@ describe('Controllers: ', function () {
     describe('Results Controller', function() {
         var resultsController,
             resultsScope,
-            httpBackend;
+            httpBackend,
+            graphData,
+            expectedResults;
         beforeEach(function () {
             module('twitterMood');
         });
 
-        beforeEach(inject(function ($rootScope, $controller, $location, $httpBackend) {
+        beforeEach(inject(function ($rootScope, $controller, $location, $httpBackend, GraphData) {
+            graphData = GraphData;
+            spyOn(graphData, 'storeUserData').andCallThrough();
             httpBackend = $httpBackend;
             httpBackend.when('GET', '/score/testUser').respond(example);
             httpBackend.expectGET('/score/testUser');
@@ -63,6 +67,15 @@ describe('Controllers: ', function () {
                 '$routeParams': {username: 'testUser'}
             });
             httpBackend.flush();
+            expectedResults = {
+                username: 'testUser',
+                mood: 'happy',
+                tweetCount: example.total,
+                happyCount: example.totalHappy,
+                sadCount: example.totalSad,
+                happyTweet: example.happyTweet,
+                sadTweet: example.sadTweet
+            };
         }));
 
         it('should have a Results Controller', inject(function() {
@@ -70,16 +83,11 @@ describe('Controllers: ', function () {
         }));
 
         it('should get the results for a user from the server', function() {
-            var expectedResults = {
-                username: 'testUser',
-                mood:'happy',
-                tweetCount: example.total,
-                happyCount: example.totalHappy,
-                sadCount: example.totalSad,
-                happyTweet: example.happyTweet,
-                sadTweet: example.sadTweet
-            }
             expect(resultsScope.results).toEqual(expectedResults);
+        });
+
+        it('should store data in Graph Service', function() {
+            expect(graphData.storeUserData).toHaveBeenCalledWith('testUser', expectedResults);
         });
 
         afterEach(function() {
@@ -87,5 +95,9 @@ describe('Controllers: ', function () {
             httpBackend.verifyNoOutstandingRequest();
         });
     });
+
+    describe('Graphs Controller', function() {
+
+    })
 
 });

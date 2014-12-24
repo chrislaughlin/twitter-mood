@@ -26,14 +26,14 @@ angular.module('twitterMood.controllers', [])
         }
 
     }])
-    .controller('ResultsCtrl', ['$scope', '$routeParams', '$http',
-        function ($scope, $routeParams, $http) {
-
+    .controller('ResultsCtrl', ['$scope', '$routeParams', '$http', 'GraphData',
+        function ($scope, $routeParams, $http, GraphData) {
+            var username = $routeParams.username;
             $scope.results = {};
             $scope.loading = true;
-            $http.get('/score/' + $routeParams.username).success(function (data) {
+            $http.get('/score/' + username).success(function (data) {
                 $scope.results = {
-                    username: $routeParams.username,
+                    username: username,
                     mood: data.totalHappy > data.totalSad ? 'happy' : 'sad',
                     tweetCount: data.total,
                     happyCount: data.totalHappy,
@@ -42,5 +42,6 @@ angular.module('twitterMood.controllers', [])
                     sadTweet: data.sadTweet
                 };
                 $scope.loading = false;
+                GraphData.storeUserData(username, $scope.results);
             });
         }]);

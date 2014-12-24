@@ -27,7 +27,6 @@ module.exports = function (config) {
         // list of files to exclude
         // TODO: include these tests once updated
         exclude: [
-            'client/test/unit/servicesSpec.js',
             'client/test/unit/filtersSpec.js',
             'client/test/unit/directivesSpec.js'
         ],

@@ -7,7 +7,8 @@ angular.module('twitterMood', [
     'twitterMood.filters',
     'twitterMood.services',
     'twitterMood.directives',
-    'twitterMood.controllers'
+    'twitterMood.controllers',
+    'twitterMood.factories'
 ]).config(['$routeProvider', function ($routeProvider) {
     // Routes
     $routeProvider.when('/main', {templateUrl: 'partials/main.html', controller: 'MoodCtrl'});

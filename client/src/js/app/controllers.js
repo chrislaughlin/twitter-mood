@@ -19,6 +19,7 @@ angular.module('twitterMood.controllers', [])
         $scope.submitLocation = function(location) {
             GoogleMaps.getLatLong($scope.location).then(function(data) {
                 console.dir(data);
+                console.dir(data);
             }, function(err) {
                 console.dir(err);
             })

@@ -14,11 +14,6 @@ gulp.task('default', function() {
         })
 });
 
-gulp.task('test:unit', function () {
-    gulp.src('client/test/unit/*Spec.js')
-        .pipe(jasmine());
-});
-
 gulp.task('lint', function () {
     gulp.src('./**/*.js')
         .pipe(jshint())
@@ -32,11 +27,7 @@ gulp.task('develop', function () {
         });
 });
 
-gulp.task('test', function() {
-    // Be sure to return the stream
-    // NOTE: Using the fake './foobar' so as to run the files
-    // listed in karma.conf.js INSTEAD of what was passed to
-    // gulp.src !
+gulp.task('clientTest:unit', function() {
     return gulp.src('./foobar')
         .pipe(karma({
             configFile: 'karma.conf.js',
@@ -45,12 +36,16 @@ gulp.task('test', function() {
         .on('error', function(err) {
             // Make sure failed tests cause gulp to exit non-zero
             console.log(err);
-            this.emit('end'); //instead of erroring the stream, end it
+            //this.emit('end'); //instead of erroring the stream, end it
         });
 });
 
 gulp.task('autoUnitTest:server', function() {
     return gulp.watch(['server/src/**/*.js', 'server/test/unit/**/*.js'], ['serverTest:unit']);
+});
+
+gulp.task('autoUnitTest:client', function() {
+    return gulp.watch(['client/src/**/*.js', 'client/test/unit/**/*.js'], ['clientTest:unit']);
 });
 
 gulp.task('serverTest:unit', function() {

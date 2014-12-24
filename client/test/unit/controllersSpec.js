@@ -2,19 +2,25 @@
 
 /* jasmine specs for controllers go here */
 
-describe('controllers', function () {
+describe('Controllers: ', function () {
 
-    var scope,
-        controller,
+    var moodScope,
+        moodController,
+        resultsController,
+        resultsScope,
         location;
     beforeEach(function () {
         module('twitterMood');
     });
 
     beforeEach(inject(function ($rootScope, $controller, $location) {
-        scope = $rootScope.$new();
-        controller = $controller('MoodCtrl', {
-            '$scope': scope
+        moodScope = $rootScope.$new();
+        resultsScope = $rootScope.$new();
+        moodController = $controller('MoodCtrl', {
+            '$scope': moodScope
+        });
+        resultsController = $controller('ResultsCtrl', {
+            '$scope': resultsScope
         });
         location = $location;
     }));
@@ -22,24 +28,28 @@ describe('controllers', function () {
 
     it('should have Mood Controller', inject(function() {
         //spec body
-        expect(controller).toBeDefined();
+        expect(moodController).toBeDefined();
+    }));
+
+    it('should have a Results Controller', inject(function() {
+        expect(resultsController).toBeDefined();
     }));
 
     it('should default name and location to blank strings', function() {
-        expect(scope.name).toEqual('');
-        expect(scope.location).toEqual('');
+        expect(moodScope.name).toEqual('');
+        expect(moodScope.location).toEqual('');
     });
 
     it('should not change the location if the name is blank', function() {
         spyOn(location, 'path');
-        scope.submit();
+        moodScope.submit();
         expect(location.path).not.toHaveBeenCalled();
     });
 
     it('should change the location path when submitting', function() {
         spyOn(location, 'path');
-        scope.name = 'test';
-        scope.submit();
+        moodScope.name = 'test';
+        moodScope.submit();
         expect(location.path).toHaveBeenCalledWith('results/test');
     });
 

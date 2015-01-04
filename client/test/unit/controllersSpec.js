@@ -97,7 +97,43 @@ describe('Controllers: ', function () {
     });
 
     describe('Graphs Controller', function() {
+        var graphsController,
+            graphsScope,
+            graphData,
+            expectedResults;
+        beforeEach(function () {
+            module('twitterMood');
+        });
 
+        beforeEach(inject(function ($rootScope, $controller, $location, GraphData) {
+            expectedResults = {
+                username: 'testUser',
+                mood: 'happy',
+                tweetCount: example.total,
+                happyCount: example.totalHappy,
+                sadCount: example.totalSad,
+                happyTweet: example.happyTweet,
+                sadTweet: example.sadTweet,
+                posTweets: example.posTweets,
+                negTweets: example.negTweets
+            };
+            graphData = GraphData;
+            spyOn(graphData, 'storeUserData').andCallThrough();
+            spyOn(graphData, 'getUserData').andReturn(expectedResults);
+            graphsScope = $rootScope.$new();
+            graphsController = $controller('GraphsCtrl', {
+                '$scope': graphsScope,
+                '$routeParams': {username: 'testUser'}
+            });
+        }));
+
+        it('should have a Results Controller', inject(function() {
+            expect(graphsController).toBeDefined();
+        }));
+
+        it('should get user data from service based on username', function() {
+            expect(graphData.getUserData).toHaveBeenCalledWith('testUser');
+        });
     })
 
 });

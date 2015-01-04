@@ -44,4 +44,6 @@ angular.module('twitterMood.controllers', [])
                 $scope.loading = false;
                 GraphData.storeUserData(username, $scope.results);
             });
-        }]);
+        }]).controller('GraphsCtrl', ['$scope', '$routeParams', 'GraphData', function($scope, $routeParams, GraphData) {
+        var userData = GraphData.getUserData($routeParams.username);
+    }]);

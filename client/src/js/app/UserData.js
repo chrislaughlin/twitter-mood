@@ -1,17 +1,21 @@
 'use strict';
 
-angular.module('twitterMood.factories', []).factory('UserData', function UserData() {
+function UserData () {
     function UserData(username, happyTweets, sadTweets) {
         this.username = username;
         this.happyTweets = happyTweets;
         this.sadTweets = sadTweets;
     }
-    UserData.prototype.getHappyTweets = function() {
+    UserData.getHappyTweets = function() {
         return this.happyTweets;
     };
-    UserData.prototype.getSadTweets = function() {
+    UserData.getSadTweets = function() {
         return this.sadTweets;
     };
+    UserData.getTweetData = function() {
+        return {
 
+        }
+    };
     return UserData;
-});
+}

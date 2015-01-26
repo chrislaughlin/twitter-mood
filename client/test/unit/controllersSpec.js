@@ -134,6 +134,10 @@ describe('Controllers: ', function () {
         it('should get user data from service based on username', function() {
             expect(graphData.getUserData).toHaveBeenCalledWith('testUser');
         });
+
+        it('should have tweets on scope', function() {
+            expect(graphsScope.data)
+        })
     })
 
 });

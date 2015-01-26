@@ -25,7 +25,7 @@ angular.module('twitterMood.services', []).service('GoogleMaps', ['$http', '$q',
             return defer.promise;
         }
     }
-}]).service('GraphData', ['UserData', function (UserData) {
+}]).service('GraphData', ['WeekDays', function (WeekDays) {
     var userDataMap = {};
     return {
         storeUserData: function (username, data) {

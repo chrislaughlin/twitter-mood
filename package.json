@@ -15,18 +15,19 @@
   "homepage": "https://github.com/chrislaughlin/twitter-mood",
   "dependencies": {
     "gulp": "~3.8.6",
-    "express": "~4.6.1",
+    "express": "~4.16.0",
     "twit": "~1.1.18",
     "sentiment": "~1.0.1",
     "morgan": "~1.2.0",
-    "body-parser": "~1.5.0",
-    "method-override": "~2.1.1",
-    "errorhandler": "~1.1.1",
+    "body-parser": "~1.17.1",
+    "method-override": "~2.3.10",
+    "errorhandler": "~1.4.3",
     "nconf": "~0.6.9",
     "lodash": "~2.4.1",
     "gulp-nodemon": "~1.0.4",
-    "gulp-jshint": "~1.8.5",
-    "moment": "~2.8.4"
+    "gulp-jshint": "~2.0.2",
+    "moment": "~2.15.2",
+    "snyk": "^1.42.5"
   },
   "devDependencies": {
     "request": "~2.37.0",
@@ -35,6 +36,9 @@
     "shelljs": "^0.2.6"
   },
   "scripts": {
-    "test": "gulp test"
-  }
+    "test": "gulp test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }

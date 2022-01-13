@@ -14,19 +14,19 @@
   },
   "homepage": "https://github.com/chrislaughlin/twitter-mood",
   "dependencies": {
-    "gulp": "~3.8.6",
-    "express": "~4.6.1",
+    "gulp": "~4.0.0",
+    "express": "~4.16.0",
     "twit": "~1.1.18",
     "sentiment": "~1.0.1",
-    "morgan": "~1.2.0",
+    "morgan": "~1.9.1",
     "body-parser": "~1.5.0",
     "method-override": "~2.1.1",
     "errorhandler": "~1.1.1",
     "nconf": "~0.6.9",
-    "lodash": "~2.4.1",
-    "gulp-nodemon": "~1.0.4",
-    "gulp-jshint": "~1.8.5",
-    "moment": "~2.8.4"
+    "lodash": "~4.17.21",
+    "gulp-nodemon": "~2.5.0",
+    "gulp-jshint": "~2.0.3",
+    "moment": "~2.19.3"
   },
   "devDependencies": {
     "request": "~2.37.0",
